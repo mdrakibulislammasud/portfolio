@@ -1,5 +1,6 @@
 
 
+import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import About from "@/components/sections/About";
@@ -98,8 +99,11 @@ export default function Home() {
         <About />
         {/* Skills Section */}
         <Skills />
+        {/* Projects Section */}
+        <Projects />
         {/* Education Section */}
         <Education />
+
       </main>
     </>
   );
