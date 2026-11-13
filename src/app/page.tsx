@@ -1,5 +1,6 @@
 
 
+import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import About from "@/components/sections/About";
 import Navbar from "@/components/layout/Navbar";
@@ -97,6 +98,8 @@ export default function Home() {
         <About />
         {/* Skills Section */}
         <Skills />
+        {/* Education Section */}
+        <Education />
       </main>
     </>
   );

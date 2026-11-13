@@ -18,9 +18,55 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Active section detection
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Always show Home at the very top
+      if (window.scrollY <= 5) {
+        setActiveSection("home");
+        return;
+      }
+
+      const navbar = document.querySelector(".navbar");
+      const navbarHeight = navbar?.getBoundingClientRect().height ?? 82;
+
+      // Detection point just below the navbar
+      const marker = navbarHeight + 12;
+
+      let currentSection = "home";
+
+      navLinks.forEach((link) => {
+        const section = document.querySelector<HTMLElement>(link.href);
+
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= marker) {
+          currentSection = section.id;
+        }
+      });
+
+      // Activate the last available section at page bottom
+      const isAtPageBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+
+      if (isAtPageBottom) {
+        const availableSections = navLinks.filter((link) =>
+          document.querySelector(link.href)
+        );
+
+        const lastSection = availableSections.at(-1);
+
+        if (lastSection) {
+          currentSection = lastSection.href.slice(1);
+        }
+      }
+
+      setActiveSection(currentSection);
     };
 
     handleScroll();
@@ -29,31 +75,15 @@ export default function Navbar() {
       passive: true,
     });
 
-    const sections = navLinks
-      .map((link) => document.querySelector(link.href))
-      .filter((section): section is Element => section !== null);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-25% 0px -65% 0px",
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
+  // Close mobile menu with Escape key
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -137,9 +167,7 @@ export default function Navbar() {
 
         {/* CENTER: DESKTOP NAVIGATION */}
         <div className="navbar-menu">
-          <ul className="navbar-links">
-            {renderLinks()}
-          </ul>
+          <ul className="navbar-links">{renderLinks()}</ul>
         </div>
 
         {/* RIGHT: DESKTOP ACTIONS */}
@@ -176,10 +204,7 @@ export default function Navbar() {
             menuOpen ? "menu-open" : ""
           }`}
         >
-          <ul className="navbar-links">
-            {renderLinks()}
-          </ul>
-
+          <ul className="navbar-links">{renderLinks()}</ul>
           {renderCTA("navbar-cta-mobile")}
         </div>
 
