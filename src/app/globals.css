@@ -29,7 +29,9 @@
   --radius-lg: 22px;
 }
 
-/* Light Theme */
+/* =========================================
+   LIGHT THEME
+========================================= */
 
 :root[data-theme="light"] {
   color-scheme: light;
@@ -47,7 +49,9 @@
   --accent-contrast: #ffffff;
 }
 
-/* Reset */
+/* =========================================
+   RESET
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -57,7 +61,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 82px;
 }
 
 body {
@@ -150,7 +154,7 @@ svg {
   gap: 24px;
 }
 
-/* LEFT: BRAND */
+/* Brand */
 
 .navbar-logo {
   justify-self: start;
@@ -187,7 +191,7 @@ svg {
   color: var(--accent);
 }
 
-/* CENTER: NAVIGATION */
+/* Desktop Navigation */
 
 .navbar-menu {
   justify-self: center;
@@ -248,7 +252,7 @@ svg {
   transform: scaleX(1);
 }
 
-/* RIGHT: DESKTOP ACTIONS */
+/* Desktop Actions */
 
 .navbar-actions {
   justify-self: end;
@@ -313,7 +317,7 @@ svg {
   transform: rotate(90deg) scale(1.2);
 }
 
-/* THEME TOGGLE */
+/* Theme Toggle */
 
 .theme-toggle {
   width: 42px;
@@ -342,7 +346,7 @@ svg {
   transform: rotate(12deg);
 }
 
-/* MOBILE ACTIONS - HIDDEN ON DESKTOP */
+/* Mobile Actions */
 
 .navbar-mobile-actions {
   display: none;
@@ -357,7 +361,7 @@ svg {
 }
 
 /* =========================================
-   TABLET
+   TABLET NAVBAR
 ========================================= */
 
 @media (max-width: 1100px) and (min-width: 901px) {
@@ -385,7 +389,7 @@ svg {
 }
 
 /* =========================================
-   MOBILE & SMALL TABLET
+   MOBILE & SMALL TABLET NAVBAR
 ========================================= */
 
 @media (max-width: 900px) {
@@ -401,14 +405,10 @@ svg {
     gap: 16px;
   }
 
-  /* Hide desktop navigation and actions */
-
   .navbar-menu,
   .navbar-actions {
     display: none;
   }
-
-  /* Show mobile actions */
 
   .navbar-mobile-actions {
     display: flex;
@@ -417,7 +417,7 @@ svg {
     gap: 12px;
   }
 
-  /* Dropdown */
+  /* Mobile Dropdown */
 
   .mobile-navigation {
     position: absolute;
@@ -526,7 +526,7 @@ svg {
 }
 
 /* =========================================
-   SMALL MOBILE
+   SMALL MOBILE NAVBAR
 ========================================= */
 
 @media (max-width: 480px) {
@@ -559,6 +559,194 @@ svg {
 }
 
 /* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  position: relative;
+  padding: 70px 0 120px;
+  background: var(--background);
+  scroll-margin-top: 0;
+}
+
+.about-container {
+  width: min(1200px, 88%);
+  margin-inline: auto;
+}
+
+.about-heading {
+  margin-bottom: 65px;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.about-heading h2 {
+  color: var(--foreground);
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.1;
+}
+
+.about-heading h2 span {
+  color: var(--accent);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: start;
+  gap: 80px;
+}
+
+.about-intro {
+  max-width: 620px;
+}
+
+.about-intro p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.about-intro .about-lead {
+  color: var(--foreground);
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.65;
+}
+
+.about-lead strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* About Highlight Cards */
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+
+  transition:
+    border-color 250ms ease,
+    transform 250ms ease,
+    background 250ms ease;
+}
+
+.about-card:hover {
+  border-color: var(--accent);
+  background: var(--surface-elevated);
+  transform: translateY(-4px);
+}
+
+.about-number {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-family: var(--font-code);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.about-card h3 {
+  margin-bottom: 9px;
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   ABOUT TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 65px 0 95px;
+  }
+
+  .about-heading {
+    margin-bottom: 45px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-intro {
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   ABOUT MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 55px 0 75px;
+  }
+
+  .about-container {
+    width: 90%;
+  }
+
+  .about-heading {
+    margin-bottom: 35px;
+  }
+
+  .about-heading h2 {
+    letter-spacing: -2px;
+  }
+
+  .about-intro p {
+    font-size: 14px;
+  }
+
+  .about-intro .about-lead {
+    font-size: 19px;
+  }
+
+  .about-card {
+    gap: 14px;
+    padding: 19px;
+  }
+
+  .about-card h3 {
+    font-size: 15px;
+  }
+
+  .about-card p {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
    REDUCED MOTION
 ========================================= */
 
@@ -571,7 +759,12 @@ svg {
   .cta-spark,
   .theme-toggle,
   .menu-toggle span,
-  .mobile-navigation {
+  .mobile-navigation,
+  .about-card {
     transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }

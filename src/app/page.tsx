@@ -1,4 +1,6 @@
 
+
+import About from "@/components/sections/About";
 import Navbar from "@/components/layout/Navbar";
 import styles from "./page.module.css";
 
@@ -90,6 +92,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* About Section */}
+        <About />
       </main>
     </>
   );
