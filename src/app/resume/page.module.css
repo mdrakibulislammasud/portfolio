@@ -1,0 +1,534 @@
+
+/* =========================================
+   RESUME PAGE
+========================================= */
+
+.page {
+  min-height: 100vh;
+  padding: 0 var(--page-gutter) 60px;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+  width: 100%;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+}
+
+.brandIcon,
+.brandDot {
+  color: var(--accent);
+}
+
+.brandIcon {
+  font-family: var(--font-code);
+  font-size: 21px;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  transition: color 200ms ease;
+}
+
+.backLink:hover {
+  color: var(--accent);
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+  max-width: 850px;
+  margin: 75px auto 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.intro h1 {
+  margin-top: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 6vw, 62px);
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+.intro h1 span {
+  color: var(--accent);
+}
+
+.intro > p {
+  max-width: 540px;
+  margin: 14px auto 25px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.viewButton,
+.downloadButton {
+  min-height: 46px;
+  padding: 0 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  transition: all 200ms ease;
+}
+
+.viewButton {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.downloadButton {
+  appearance: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--foreground);
+}
+
+.viewButton:hover,
+.downloadButton:hover {
+  transform: translateY(-3px);
+}
+
+.downloadButton:hover {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* =========================================
+   RESUME DOCUMENT
+========================================= */
+
+.resumeSheet {
+  box-sizing: border-box;
+  width: 210mm;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 13mm 16mm;
+  background: #ffffff;
+  color: #20242c;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  font-family: Aptos, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   DOCUMENT HEADER
+========================================= */
+
+.documentHeader {
+  padding-bottom: 12px;
+  border-bottom: 2px solid #20242c;
+  text-align: center;
+}
+
+.documentHeader h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  line-height: 1.2;
+  color: #172033;
+}
+
+.designation {
+  margin-top: 6px;
+  color: #315b91;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+/* =========================================
+   CONTACT DETAILS
+   EXACTLY 3 CENTERED LINES
+========================================= */
+
+.contactDetails {
+  width: 100%;
+  margin: 13px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.contactDetails p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.contactDetails a {
+  color: #374151;
+  text-decoration: none;
+}
+
+.contactDetails a:hover {
+  color: #164b91;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.separator {
+  margin: 0 5px;
+  color: #9299a5;
+}
+
+.contactDetails .socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.contactDetails .socialLinks a {
+  color: #164b91;
+  font-weight: 600;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+  margin-top: 14px;
+}
+
+.section h3 {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #c5ccd6;
+  color: #172033;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.section p {
+  line-height: 1.5;
+}
+
+.section strong {
+  margin-right: 4px;
+  color: #172033;
+  font-weight: 700;
+}
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.skillList p {
+  line-height: 1.45;
+}
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.project {
+  margin-top: 4px;
+}
+
+.projectHeading,
+.educationHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.projectHeading h4,
+.educationHeading h4 {
+  color: #172033;
+  font-size: 10.5px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.projectHeading > span,
+.educationHeading > span {
+  flex-shrink: 0;
+  color: #525d6d;
+  font-size: 9.5px;
+  font-style: italic;
+}
+
+.project > p {
+  margin-top: 5px;
+}
+
+.project ul,
+.section ul {
+  margin: 5px 0 0 17px;
+  padding: 0;
+}
+
+.project li,
+.section li {
+  margin-bottom: 3px;
+  padding-left: 2px;
+  line-height: 1.4;
+}
+
+.projectTech {
+  margin-top: 7px;
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 7px;
+  font-size: 9.5px;
+}
+
+.projectLinks a {
+  color: #164b91;
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.projectLinks a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   EDUCATION
+========================================= */
+
+.education > p {
+  margin-top: 4px;
+}
+
+.education > p:last-child {
+  color: #596273;
+  font-size: 9.5px;
+  font-style: italic;
+}
+
+/* =========================================
+   LANGUAGES
+========================================= */
+
+.languageDivider {
+  margin: 0 10px;
+  color: #9299a5;
+}
+
+/* =========================================
+   DOCUMENT FOOTER
+========================================= */
+
+.documentFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #c5ccd6;
+  color: #697386;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.documentFooter span {
+  text-align: right;
+}
+
+/* =========================================
+   PAGE FOOTER
+========================================= */
+
+.pageFooter {
+  max-width: 850px;
+  margin: 45px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pageFooter a {
+  color: var(--accent);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .resumeSheet {
+    width: 100%;
+    min-height: 0;
+    padding: 40px;
+  }
+
+  .intro {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .page {
+    padding-bottom: 35px;
+  }
+
+  .topbar {
+    min-height: 70px;
+  }
+
+  .topbarActions {
+    gap: 12px;
+  }
+
+  .backLink {
+    font-size: 11px;
+  }
+
+  .intro {
+    margin: 45px auto 30px;
+  }
+
+  .intro h1 {
+    letter-spacing: -1px;
+  }
+
+  .intro > p {
+    font-size: 13px;
+  }
+
+  .actions {
+    gap: 9px;
+  }
+
+  .viewButton,
+  .downloadButton {
+    min-height: 43px;
+    padding: 0 16px;
+    font-size: 11px;
+  }
+
+  .resumeSheet {
+    width: 100%;
+    min-height: 0;
+    padding: 30px 22px;
+    font-size: 10px;
+  }
+
+  .documentHeader h2 {
+    font-size: 23px;
+  }
+
+  .designation {
+    font-size: 10px;
+  }
+
+  /* CONTACT DETAILS */
+
+  .contactDetails {
+    gap: 8px;
+    font-size: 9.5px;
+  }
+
+  .contactDetails .socialLinks {
+    gap: 24px;
+  }
+
+  /* PROJECT AND EDUCATION */
+
+  .projectHeading,
+  .educationHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  /* DOCUMENT FOOTER */
+
+  .documentFooter {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .documentFooter span {
+    text-align: left;
+  }
+
+  /* PAGE FOOTER */
+
+  .pageFooter {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
