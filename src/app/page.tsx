@@ -1,11 +1,13 @@
+﻿
 
-import Contact from "@/components/sections/Contact";
+import styles from "./page.module.css";
+import Navbar from "@/components/layout/Navbar";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
-import Skills from "@/components/sections/Skills";
-import About from "@/components/sections/About";
-import Navbar from "@/components/layout/Navbar";
-import styles from "./page.module.css";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -107,6 +109,7 @@ export default function Home() {
         <Contact />
 
       </main>
+      <Footer />
     </>
   );
 }

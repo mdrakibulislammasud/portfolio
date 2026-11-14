@@ -11,7 +11,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     description: "Connect with me professionally",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/md-masud-rana-r",
     icon: "in",
   },
 ];
