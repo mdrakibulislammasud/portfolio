@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MD Masud Rana — Portfolio
 
-## Getting Started
+A modern, responsive personal portfolio showcasing my journey, technical skills, education, and software development projects.
 
-First, run the development server:
+## 🌐 Live Website
+
+**Portfolio:** https://portfolio-diligent3.vercel.app/
+
+## 👨‍💻 About Me
+
+I'm **MD Masud Rana**, an aspiring Full-Stack Developer and Software Engineer passionate about building modern, user-friendly web applications.
+
+This portfolio highlights my development journey, technical experience, featured projects, and continuous learning in software engineering.
+
+## ✨ Features
+
+- Modern and professional developer-focused interface.
+- Fully responsive layouts for mobile, tablet, and desktop.
+- Dark mode by default with an optional light theme.
+- Professional introduction and profile section.
+- Technical skills and education sections.
+- Three featured projects with dedicated detail pages.
+- Project descriptions, technology stacks, challenges, and future improvements.
+- Resume preview and PDF export functionality.
+- Contact information and social profile links.
+- Locally stored images and reusable components.
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Framework | Next.js 16 |
+| Frontend | React 19, TypeScript |
+| Styling | CSS Modules, Global CSS |
+| Theme | next-themes |
+| Icons | React Icons |
+| Resume Export | html2pdf.js |
+| Deployment | Vercel |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mdrakibulislammasud/portfolio.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd portfolio
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open http://localhost:3000 in your browser.
+
+## 📜 Available Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # Start development server
+npm run build   # Create production build
+npm run start   # Run production server
+npm run lint    # Run ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/
+├── app/
+│   ├── projects/
+│   │   ├── dev-stack-builder/
+│   │   ├── fitlog/
+│   │   └── neighbourly/
+│   ├── resume/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   ├── projects/
+│   ├── providers/
+│   └── sections/
+├── data/
+│   └── projects.ts
+└── types/
+    └── html2pdf.d.ts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+public/
+└── images/
+    ├── profile.png
+    └── projects/
+```
 
-## Learn More
+## 📌 Featured Projects
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Neighbourly
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A community-driven social development events platform where users can discover, create, and participate in local social service events.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Live: https://neighbourly-client.vercel.app/
+- Client: https://github.com/mdrakibulislammasud/B14_A_08_Client
+- Server: https://github.com/mdrakibulislammasud/B14_A_08_Server
 
-## Deploy on Vercel
+### 2. FitLog
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A workout management application for discovering
