@@ -1,7 +1,8 @@
 
 "use client";
 
-import ThemeToggle from "@/components/theme/ThemeToggle";
+import Link from "next/link";
+import ThemeToggle from "@/components/layout/ThemeToggle/ThemeToggle";
 import styles from "./page.module.css";
 
 export default function ResumePage() {
@@ -52,20 +53,20 @@ export default function ResumePage() {
     <main className={styles.page}>
       {/* TOPBAR */}
       <header className={styles.topbar}>
-        <a href="/" className={styles.brand} aria-label="Back to Home">
+        <Link href="/" className={styles.brand} aria-label="Back to Home">
           <span className={styles.brandIcon}>&lt;/&gt;</span>
           <span>
             MASUD<span className={styles.brandDot}>.</span>
           </span>
-        </a>
+        </Link>
 
         <div className={styles.topbarActions}>
           <ThemeToggle />
 
-          <a href="/" className={styles.backLink}>
+          <Link href="/" className={styles.backLink}>
             <span aria-hidden="true">←</span>
             Back to Home
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -345,7 +346,7 @@ export default function ResumePage() {
       <footer className={styles.pageFooter}>
         <p>Designed with clarity. Built with purpose.</p>
 
-        <a href="/">← Back to Home</a>
+        <Link href="/">← Back to Home</Link>
       </footer>
     </main>
   );

@@ -1,9 +1,11 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
     number: "01",
+    slug: "neighbourly",
     name: "Neighbourly",
     category: "FULL-STACK WEB APPLICATION",
     featured: true,
@@ -24,12 +26,13 @@ const projects = [
   },
   {
     number: "02",
+    slug: "fitlog",
     name: "FitLog",
     category: "FITNESS & WORKOUT PLANNER",
     featured: false,
     image: "/images/projects/fitlog.png",
     description:
-      "A fitness application that helps users explore workouts, build personal workout stacks, and organize their daily exercise plans.",
+      "A fitness application designed to help users explore workouts, build personal workout stacks, and organize their exercise plans.",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -38,6 +41,27 @@ const projects = [
     ],
     liveUrl: "https://fitlog-diligent3.vercel.app/",
     githubUrl: "https://github.com/mdrakibulislammasud/FitLog",
+  },
+  {
+    number: "03",
+    slug: "dev-stack-builder",
+    name: "Dev Stack Builder",
+    category: "INTERACTIVE REACT APPLICATION",
+    featured: false,
+    image: "/images/projects/devstack.png",
+    description:
+      "An interactive application that helps developers explore modern technologies and build their own personalized development stack.",
+    technologies: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS3",
+      "React Hooks",
+      "JSON",
+    ],
+    liveUrl: "https://b14-a05-dev-stack-psi.vercel.app/",
+    githubUrl:
+      "https://github.com/mdrakibulislammasud/B14-A05-DevStack",
   },
 ];
 
@@ -63,7 +87,7 @@ export default function Projects() {
         <div className="projects-grid">
           {projects.map((project) => (
             <article
-              key={project.number}
+              key={project.slug}
               className={`project-card ${
                 project.featured ? "project-featured" : ""
               }`}
@@ -128,6 +152,13 @@ export default function Projects() {
                   >
                     GitHub <span aria-hidden="true">↗</span>
                   </a>
+
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="project-link"
+                  >
+                    View Details <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </div>
             </article>

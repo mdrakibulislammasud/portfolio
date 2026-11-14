@@ -1,0 +1,27 @@
+/* Theme toggle */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--foreground);
+  transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(12deg);
+}
+
+@media (max-width: 480px) {
+  .theme-toggle { width: 39px; height: 39px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
+}
